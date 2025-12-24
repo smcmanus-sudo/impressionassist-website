@@ -480,6 +480,11 @@ a:hover {
     background-color: var(--white);
 }
 
+.pricing-cta {
+    text-align: center;
+    margin-top: 32px;
+}
+
 .pricing-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -600,6 +605,25 @@ a:hover {
 
 .about .section-title {
     margin-bottom: 16px;
+}
+
+/* About Content */
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-content .about-text {
+    font-size: 1.125rem;
+    line-height: 1.9;
+    margin-bottom: 32px;
+}
+
+.about-content .about-company {
+    display: inline-block;
+    text-align: left;
+    margin-top: 16px;
 }
 
 /* Founder Section */
