@@ -387,10 +387,97 @@ a:hover {
     line-height: 1.7;
 }
 
+/* Research Section */
+.research {
+    padding: 100px 0;
+    background-color: var(--bg-light);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-bottom: 48px;
+}
+
+.stat-card {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 32px 24px;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    border-top: 4px solid var(--primary-color);
+    transition: var(--transition);
+}
+
+.stat-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    line-height: 1;
+    margin-bottom: 12px;
+}
+
+.stat-text {
+    font-size: 0.9375rem;
+    color: var(--text-gray);
+    line-height: 1.5;
+}
+
+.research-quote {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: var(--shadow-sm);
+    border-left: 4px solid var(--primary-color);
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.quote-icon {
+    position: absolute;
+    top: 24px;
+    left: 40px;
+    color: var(--primary-light);
+    opacity: 0.6;
+}
+
+.quote-icon svg {
+    width: 40px;
+    height: 40px;
+}
+
+.research-quote blockquote {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: var(--text-gray);
+    margin: 0 0 20px 0;
+    padding-left: 48px;
+    font-style: italic;
+}
+
+.research-quote cite {
+    display: block;
+    padding-left: 48px;
+    font-size: 0.9375rem;
+    color: var(--text-light);
+    font-style: normal;
+}
+
+.research-quote cite em {
+    font-style: italic;
+}
+
 /* Pricing Section */
 .pricing {
     padding: 100px 0;
-    background-color: var(--bg-light);
+    background-color: var(--white);
 }
 
 .pricing-grid {
@@ -779,6 +866,10 @@ a:hover {
         text-align: center;
     }
 
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     .contact-grid {
         grid-template-columns: 1fr;
         gap: 32px;
@@ -852,6 +943,28 @@ a:hover {
 
     .feature-icon {
         margin: 0 auto 20px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stat-number {
+        font-size: 2.5rem;
+    }
+
+    .research-quote {
+        padding: 24px;
+    }
+
+    .quote-icon {
+        position: static;
+        margin-bottom: 16px;
+    }
+
+    .research-quote blockquote,
+    .research-quote cite {
+        padding-left: 0;
     }
 
     .footer-content {
