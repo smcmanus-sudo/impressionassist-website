@@ -47,15 +47,24 @@
             <div class="hero-content">
                 <h1 class="hero-title">Radiology reports your patients can understand</h1>
                 <p class="hero-subtitle">AI-powered translation turns complex medical impressions into clear, patient-friendly language</p>
+                <div class="hero-stats">
+                    <p class="hero-stat-line"><span class="stat-highlight">85%</span> of patients are confused by their radiology reports.</p>
+                    <p class="hero-stat-line"><span class="stat-highlight">50%</span> of follow-up recommendations are never completed.</p>
+                    <p class="hero-stat-tagline">ImpressionAssist fixes both.</p>
+                </div>
                 <a href="#contact" class="btn btn-primary btn-large">Get Started</a>
             </div>
             <div class="hero-visual">
-                <div class="comparison-card">
+                <div class="comparison-tabs">
+                    <button class="tab-btn active" data-tab="translator">Patient-Friendly Translation</button>
+                    <button class="tab-btn" data-tab="actions">Action Items</button>
+                </div>
+                <div class="comparison-card tab-content active" id="translator">
                     <div class="comparison-before">
                         <div class="comparison-label">Before</div>
                         <div class="comparison-content">
                             <p class="comparison-title">Radiology Impression:</p>
-                            <p>"1.5 cm spiculated pulmonary nodule in the RUL concerning for primary adenocarcinoma. Recommend PET-CT for metabolic characterization and tissue sampling for histopathologic confirmation."</p>
+                            <p>"1.5 cm spiculated pulmonary nodule in the RUL concerning for primary adenocarcinoma. Recommend PET-CT for metabolic characterization and tissue sampling for histopathologic confirmation. Additionally, 6mm left lower lobe nodule identified, recommend follow-up CT chest in 12 months per Fleischner Society guidelines."</p>
                         </div>
                     </div>
                     <div class="comparison-arrow">
@@ -67,7 +76,33 @@
                         <div class="comparison-label">After</div>
                         <div class="comparison-content">
                             <p class="comparison-title">Patient-Friendly Version:</p>
-                            <p>"We found a small spot (about the size of a marble) in your right lung that needs further evaluation. Your doctor will likely order a special scan and possibly a small tissue sample to determine exactly what it is."</p>
+                            <p>"We found a small spot (about the size of a marble) in your right lung that needs further evaluation. Your doctor will likely order a special scan and possibly a small tissue sample to determine exactly what it is. We also found a tiny spot in a different part of your lung that we'll want to recheck in about a year with another scan."</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="comparison-card tab-content" id="actions">
+                    <div class="comparison-before">
+                        <div class="comparison-label">Before</div>
+                        <div class="comparison-content">
+                            <p class="comparison-title">Buried in Impression:</p>
+                            <p>"...recommend PET-CT for metabolic characterization and tissue sampling for histopathologic confirmation. Additionally, 6mm left lower lobe nodule, recommend follow-up CT chest in 12 months per Fleischner criteria. Scattered hepatic hypodensities too small to characterize, consider MRI abdomen if clinically indicated..."</p>
+                        </div>
+                    </div>
+                    <div class="comparison-arrow">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 5v14M19 12l-7 7-7-7"/>
+                        </svg>
+                    </div>
+                    <div class="comparison-after action-items-result">
+                        <div class="comparison-label">After</div>
+                        <div class="comparison-content">
+                            <p class="comparison-title">ACTION ITEMS:</p>
+                            <ul class="action-items-list">
+                                <li><strong>PET-CT scan</strong> - for lung nodule evaluation</li>
+                                <li><strong>Tissue biopsy</strong> - to determine nodule type</li>
+                                <li><strong>CT chest in 12 months</strong> - follow-up for 6mm LLL nodule (Fleischner)</li>
+                                <li><strong>Consider MRI abdomen</strong> - if hepatic lesions clinically relevant</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -141,25 +176,50 @@
     <!-- Research Section -->
     <section id="research" class="research">
         <div class="container">
-            <h2 class="section-title">The Problem We Solve</h2>
-            <p class="section-subtitle">Research shows patients struggle to understand their radiology reports</p>
+            <h2 class="section-title">Two Problems. One Solution.</h2>
+            <p class="section-subtitle">Research reveals critical gaps in radiology communication</p>
 
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-number">85%</div>
-                    <div class="stat-text">of patients are confused by medical terms in radiology reports</div>
+            <!-- The Communication Problem -->
+            <div class="problem-section">
+                <h3 class="problem-title">The Communication Problem</h3>
+                <p class="problem-subtitle">Patients can't understand their reports</p>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">85%</div>
+                        <div class="stat-text">of patients are confused by medical terms in radiology reports</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">40%</div>
+                        <div class="stat-text">feel anxious trying to understand their results</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">65%</div>
+                        <div class="stat-text">want medical jargon and scoring systems explained</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">60%</div>
+                        <div class="stat-text">want clearer formatting and shorter reports</div>
+                    </div>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-number">40%</div>
-                    <div class="stat-text">feel anxious trying to understand their results</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">65%</div>
-                    <div class="stat-text">want medical jargon and scoring systems explained</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">60%</div>
-                    <div class="stat-text">want clearer formatting and shorter reports</div>
+            </div>
+
+            <!-- The Follow-Up Problem -->
+            <div class="problem-section">
+                <h3 class="problem-title">The Follow-Up Problem</h3>
+                <p class="problem-subtitle">Critical recommendations fall through the cracks</p>
+                <div class="stats-grid stats-grid-3">
+                    <div class="stat-card stat-card-highlight">
+                        <div class="stat-number">50%</div>
+                        <div class="stat-text">of follow-up recommendations are never completed</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">$195K</div>
+                        <div class="stat-text">in lost imaging revenue per radiologist per year</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">1,300</div>
+                        <div class="stat-text">follow-up recommendations per radiologist per year</div>
+                    </div>
                 </div>
             </div>
 
@@ -170,9 +230,9 @@
                     </svg>
                 </div>
                 <blockquote>
-                    Research published in Current Problems in Diagnostic Radiology found that most patients are confused when reading their radiology reports. With the 21st Century Cures Act giving patients direct access to their medical records, there's a growing need for clear, patient-friendly explanations. ImpressionAssist bridges this gap automatically.
+                    Research published in Current Problems in Diagnostic Radiology found that most patients are confused when reading their radiology reports. Meanwhile, studies show that half of all radiology follow-up recommendations are never completed - leading to delayed diagnoses, patient harm, and significant lost revenue. ImpressionAssist solves both problems with a single keystroke.
                 </blockquote>
-                <cite>Hee B, et al. <em>Current Problems in Diagnostic Radiology</em>. October 2025.</cite>
+                <cite>Sources: Hee B, et al. <em>Current Problems in Diagnostic Radiology</em> (2025); <em>Annals of Emergency Medicine</em></cite>
             </div>
         </div>
     </section>
@@ -180,20 +240,152 @@
     <!-- Pricing Section -->
     <section id="pricing" class="pricing">
         <div class="container">
-            <h2 class="section-title">Pricing</h2>
-            <p class="section-subtitle">Pricing scales with practice size. Schedule a call to discuss the right plan for your organization.</p>
-            <div class="pricing-cta">
-                <a href="#contact" class="btn btn-primary btn-large">Contact Us</a>
+            <h2 class="section-title">Simple, Transparent Pricing</h2>
+            <p class="section-subtitle">About $15/day per radiologist. Less than lunch.</p>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3 class="pricing-name">Patient-Friendly Translation</h3>
+                        <div class="pricing-price">
+                            <span class="price-amount">$2,500</span>
+                            <span class="price-period">/radiologist/year</span>
+                        </div>
+                    </div>
+                    <div class="pricing-features">
+                        <ul>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"/>
+                                </svg>
+                                One-click translation (F2 key)
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"/>
+                                </svg>
+                                Plain-language impressions
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"/>
+                                </svg>
+                                Seamless PowerScribe integration
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"/>
+                                </svg>
+                                HIPAA compliant
+                            </li>
+                        </ul>
+                    </div>
+                    <p class="pricing-tagline">About $10/day. Every report becomes something patients can understand.</p>
+                    <a href="#contact" class="btn btn-secondary">Get Started</a>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3 class="pricing-name">Action Items</h3>
+                        <div class="pricing-price">
+                            <span class="price-amount">$1,000</span>
+                            <span class="price-period">/radiologist/year</span>
+                        </div>
+                    </div>
+                    <div class="pricing-features">
+                        <ul>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"/>
+                                </svg>
+                                Automatic action item extraction
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"/>
+                                </svg>
+                                Clear follow-up recommendations
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"/>
+                                </svg>
+                                Reduce lost follow-ups
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"/>
+                                </svg>
+                                Liability protection
+                            </li>
+                        </ul>
+                    </div>
+                    <p class="pricing-tagline">50% of follow-ups never happen. That's $195K walking out the door. This pays for itself.</p>
+                    <a href="#contact" class="btn btn-secondary">Get Started</a>
+                </div>
+                <div class="pricing-card featured">
+                    <span class="pricing-badge">Best Value</span>
+                    <div class="pricing-header">
+                        <h3 class="pricing-name">Complete Solution</h3>
+                        <div class="pricing-price">
+                            <span class="price-original">$3,500</span>
+                            <span class="price-amount">$3,000</span>
+                            <span class="price-period">/radiologist/year</span>
+                        </div>
+                    </div>
+                    <div class="pricing-features">
+                        <ul>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"/>
+                                </svg>
+                                <strong>Everything in both plans</strong>
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"/>
+                                </svg>
+                                Patient-friendly translations
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"/>
+                                </svg>
+                                Action item extraction
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"/>
+                                </svg>
+                                Priority support
+                            </li>
+                        </ul>
+                    </div>
+                    <p class="pricing-tagline">$12/day per radiologist. The complete patient communication solution.</p>
+                    <a href="#contact" class="btn btn-primary">Get Started</a>
+                </div>
             </div>
+            <p class="pricing-note">Volume discounts available for larger practices. Contact us to discuss.</p>
         </div>
     </section>
 
     <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
-            <h2 class="section-title">Built by Radiologists, for Radiologists</h2>
-            <div class="about-content">
-                <p class="about-text">ImpressionAssist was created by practicing radiologists who saw the problem firsthand - patients struggling to understand their radiology reports. With the 21st Century Cures Act giving patients direct access to their medical records, we built a tool to bridge the communication gap automatically. No workflow disruption. No learning curve. Just clear, patient-friendly explanations at the press of a button.</p>
+            <h2 class="section-title">Why I Built This</h2>
+            <div class="about-content founder-story">
+                <div class="founder-letter">
+                    <p>I've been reading radiology studies for over 25 years. I had no idea that 85% of patients were confused by my reports, or that 50% of my follow-up recommendations never happen. And, honestly, if I did, I'm not sure what I could've done about it. Until now.</p>
+
+                    <p>ImpressionAssist uses artificial intelligence to convert my confusing impressions into patient-friendly language.</p>
+
+                    <p>I've added an "Action Items" line to make it easier for referrers and patients to know what I want them to do moving forward.</p>
+
+                    <p>A friend of mine had an MRI that mentioned a "pleomorphic adenoma versus Warthin's tumor" in his parotid gland. He's a smart guy. He called me panicked because he couldn't tell if he was fine or had cancer. My goal is to make sure this doesn't happen again.</p>
+
+                    <div class="founder-signature">
+                        <p class="signature-name">Steve McManus, MD</p>
+                        <p class="signature-title">Radiologist & Founder</p>
+                    </div>
+                </div>
                 <div class="about-company">
                     <strong>ImpressionAssist LLC</strong>
                     <p>Empowering better patient communication in radiology</p>
@@ -206,18 +398,18 @@
     <section id="contact" class="contact">
         <div class="container">
             <h2 class="section-title">Get Started Today</h2>
-            <p class="section-subtitle">Download ImpressionAssist or contact us for a demo</p>
+            <p class="section-subtitle">Request early access or contact us for a demo</p>
             <div class="contact-grid">
                 <div class="download-section">
-                    <h3>Download</h3>
-                    <p>Ready to improve your patient communication? Download the ImpressionAssist installer.</p>
+                    <h3>Early Access</h3>
+                    <p>ImpressionAssist is currently in beta testing with select practices. Contact us for early access.</p>
                     <a href="#" class="btn btn-primary btn-large download-btn">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
                             <polyline points="7 10 12 15 17 10"/>
                             <line x1="12" y1="15" x2="12" y2="3"/>
                         </svg>
-                        Download Installer (MSI)
+                        Request Early Access
                     </a>
                     <p class="download-note">Windows 10/11 required. PowerScribe One integration.</p>
                 </div>
