@@ -280,6 +280,12 @@ a:hover {
     margin-bottom: 0;
 }
 
+.hero-stat-line sup {
+    font-size: 0.75rem;
+    color: var(--text-light);
+    margin-left: 1px;
+}
+
 .hero-visual {
     display: flex;
     flex-direction: column;
@@ -349,6 +355,29 @@ a:hover {
 .comparison-arrow svg {
     width: 32px;
     height: 32px;
+}
+
+/* Hero Citations */
+.hero-citations {
+    text-align: left;
+    padding-top: 40px;
+    grid-column: 1 / -1;
+}
+
+.hero-citations p {
+    font-size: 0.75rem;
+    color: #666;
+    margin-bottom: 4px;
+    line-height: 1.5;
+}
+
+.hero-citations p:last-child {
+    margin-bottom: 0;
+}
+
+.hero-citations sup {
+    font-size: 0.625rem;
+    margin-right: 2px;
 }
 
 /* Comparison Tabs */
