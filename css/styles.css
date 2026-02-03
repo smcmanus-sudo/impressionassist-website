@@ -795,10 +795,93 @@ a:hover {
     font-style: italic;
 }
 
+/* Security & Compliance Section */
+.security {
+    padding: 100px 0;
+    background-color: var(--bg-light);
+}
+
+.security-table-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    background: var(--white);
+    border-radius: 16px;
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+}
+
+.security-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.security-table tr {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.security-table tr:last-child {
+    border-bottom: none;
+}
+
+.security-table td {
+    padding: 16px 24px;
+    font-size: 0.9375rem;
+}
+
+.security-label {
+    font-weight: 600;
+    color: var(--text-dark);
+    width: 40%;
+    background-color: var(--bg-light);
+}
+
+.security-value {
+    color: var(--text-gray);
+    width: 60%;
+}
+
+@media (max-width: 768px) {
+    .security-table td {
+        padding: 12px 16px;
+        font-size: 0.875rem;
+    }
+
+    .security-label {
+        width: 45%;
+    }
+
+    .security-value {
+        width: 55%;
+    }
+}
+
+@media (max-width: 480px) {
+    .security-table tr {
+        display: flex;
+        flex-direction: column;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .security-table td {
+        width: 100%;
+        padding: 12px 16px;
+    }
+
+    .security-label {
+        padding-bottom: 4px;
+        background-color: var(--white);
+    }
+
+    .security-value {
+        padding-top: 4px;
+        padding-bottom: 16px;
+    }
+}
+
 /* About Section */
 .about {
     padding: 100px 0;
-    background-color: var(--bg-light);
+    background-color: var(--white);
 }
 
 .about .section-title {
