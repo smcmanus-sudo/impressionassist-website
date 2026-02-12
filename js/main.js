@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }, observerOptions);
 
-        document.querySelectorAll('.feature-card, .pricing-card, .stat').forEach(function(el) {
+        document.querySelectorAll('.feature-card, .pricing-card, .stat, .roi-step').forEach(function(el) {
             el.style.opacity = '0';
             observer.observe(el);
         });

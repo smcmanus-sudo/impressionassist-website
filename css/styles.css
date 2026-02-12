@@ -795,6 +795,96 @@ a:hover {
     font-style: italic;
 }
 
+/* ROI / Revenue Recapture Section */
+.roi {
+    padding: 100px 0;
+    background-color: var(--white);
+}
+
+.roi-flow {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    margin-bottom: 48px;
+}
+
+.roi-step {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: var(--shadow-sm);
+    border-top: 4px solid var(--primary-color);
+    transition: var(--transition);
+}
+
+.roi-step:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.roi-step-number {
+    width: 40px;
+    height: 40px;
+    background: var(--primary-color);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.25rem;
+    margin-bottom: 16px;
+}
+
+.roi-step h3 {
+    font-size: 1.125rem;
+    margin-bottom: 8px;
+    color: var(--text-dark);
+}
+
+.roi-step p {
+    color: var(--text-light);
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    margin-bottom: 0;
+}
+
+.roi-evidence {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.roi-evidence-card {
+    background: var(--bg-light);
+    border-radius: 16px;
+    padding: 40px;
+    border-left: 4px solid var(--primary-color);
+}
+
+.roi-evidence-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 16px;
+    color: var(--text-dark);
+}
+
+.roi-evidence-card p {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    color: var(--text-gray);
+}
+
+.roi-evidence-card cite {
+    display: block;
+    font-size: 0.875rem;
+    color: var(--text-light);
+    font-style: normal;
+    margin-top: 16px;
+}
+
+.roi-evidence-card cite em {
+    font-style: italic;
+}
+
 /* Security & Compliance Section */
 .security {
     padding: 100px 0;
@@ -1295,6 +1385,12 @@ a:hover {
         grid-template-columns: 1fr;
     }
 
+    .roi-flow {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        margin: 0 auto 48px;
+    }
+
     .contact-grid {
         grid-template-columns: 1fr;
         gap: 32px;
@@ -1403,6 +1499,18 @@ a:hover {
     }
 
     .research-quote {
+        padding: 24px;
+    }
+
+    .roi-flow {
+        grid-template-columns: 1fr;
+    }
+
+    .roi-step {
+        padding: 24px;
+    }
+
+    .roi-evidence-card {
         padding: 24px;
     }
 
