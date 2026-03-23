@@ -795,6 +795,12 @@ a:hover {
     font-style: italic;
 }
 
+/* CTA Section */
+.cta {
+    padding: 100px 0;
+    background-color: var(--white);
+}
+
 /* ROI / Revenue Recapture Section */
 .roi {
     padding: 100px 0;
