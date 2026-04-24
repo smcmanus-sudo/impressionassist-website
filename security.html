@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ImpressionAssist security and compliance: HIPAA, BAA with Google, no PHI storage, TLS 1.2+ encryption, SOC 2 Type 1 in progress.">
+    <meta name="keywords" content="ImpressionAssist security, HIPAA compliance, radiology AI security, SOC 2, BAA">
+    <meta name="author" content="ImpressionAssist LLC">
+    <meta property="og:title" content="Security & Compliance - ImpressionAssist">
+    <meta property="og:description" content="How ImpressionAssist protects patient data: HIPAA-compliant, no PHI storage, encrypted in transit, US data residency.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://impressionassist.com/security">
+    <meta property="og:image" content="https://impressionassist.com/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <title>Security & Compliance - ImpressionAssist</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .security-intro {
+            padding: 80px 0 40px;
+            background-color: var(--white);
+        }
+        .security-intro .container {
+            max-width: 820px;
+        }
+        .security-intro h1 {
+            font-size: 2.5rem;
+            color: var(--text-dark);
+            margin-bottom: 16px;
+            text-align: center;
+        }
+        .security-intro .intro-lede {
+            font-size: 1.125rem;
+            line-height: 1.7;
+            color: var(--text-gray);
+            text-align: center;
+            margin-bottom: 0;
+        }
+        .security-additional {
+            padding: 80px 0 100px;
+            background-color: var(--white);
+        }
+        .security-additional .container {
+            max-width: 820px;
+        }
+        .security-additional h2 {
+            font-size: 1.75rem;
+            color: var(--text-dark);
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        .security-additional .additional-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-top: 32px;
+        }
+        .security-additional .additional-card {
+            background: var(--bg-light);
+            border-radius: 16px;
+            padding: 32px;
+            border-top: 4px solid var(--primary-color);
+        }
+        .security-additional .additional-card h3 {
+            font-size: 1.125rem;
+            color: var(--text-dark);
+            margin-bottom: 12px;
+        }
+        .security-additional .additional-card p {
+            font-size: 0.9375rem;
+            line-height: 1.7;
+            color: var(--text-gray);
+            margin-bottom: 0;
+        }
+        .security-additional .additional-card a {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        .security-additional .additional-card a:hover {
+            color: var(--primary-dark);
+        }
+        @media (max-width: 768px) {
+            .security-intro h1 { font-size: 1.875rem; }
+            .security-intro .intro-lede { font-size: 1rem; }
+            .security-additional .additional-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="/" class="logo">
+                <img src="assets/images/logo.png" alt="ImpressionAssist Logo" class="logo-img">
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="/">Home</a></li>
+                <li><a href="/#features">Features</a></li>
+                <li><a href="/#research">Research</a></li>
+                <li><a href="/#roi">ROI</a></li>
+                <li><a href="/security">Security</a></li>
+                <li><a href="/#contact" class="btn btn-nav">Get Started</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Intro -->
+    <section class="security-intro">
+        <div class="container">
+            <h1>Security &amp; Compliance</h1>
+            <p class="intro-lede">Radiology data is among the most sensitive information in healthcare, and ImpressionAssist is built around that reality. We designed the product so that protected health information is processed in memory and never stored, transmitted only over encrypted channels, and handled under a Business Associate Agreement with our cloud provider. The details below reflect how the system is architected and operated today.</p>
+        </div>
+    </section>
+
+    <!-- Security & Compliance Section (mirrors home page) -->
+    <section id="security" class="security">
+        <div class="container">
+            <h2 class="section-title">Security Controls</h2>
+            <p class="section-subtitle">Built for healthcare IT requirements from day one.</p>
+            <div class="security-table-wrapper">
+                <table class="security-table">
+                    <tbody>
+                        <tr>
+                            <td class="security-label">HIPAA Compliant</td>
+                            <td class="security-value">Yes</td>
+                        </tr>
+                        <tr>
+                            <td class="security-label">BAA with Google</td>
+                            <td class="security-value">Yes</td>
+                        </tr>
+                        <tr>
+                            <td class="security-label">PHI Storage</td>
+                            <td class="security-value">None&mdash;data processed in memory, never stored</td>
+                        </tr>
+                        <tr>
+                            <td class="security-label">Data Retention</td>
+                            <td class="security-value">None&mdash;no patient data retained after processing</td>
+                        </tr>
+                        <tr>
+                            <td class="security-label">Audit Logging</td>
+                            <td class="security-value">Yes (PHI-safe)</td>
+                        </tr>
+                        <tr>
+                            <td class="security-label">LLM Provider</td>
+                            <td class="security-value">Google Vertex AI (Gemini)</td>
+                        </tr>
+                        <tr>
+                            <td class="security-label">Data Residency</td>
+                            <td class="security-value">United States</td>
+                        </tr>
+                        <tr>
+                            <td class="security-label">Subprocessors</td>
+                            <td class="security-value">Google Cloud (Vertex AI)</td>
+                        </tr>
+                        <tr>
+                            <td class="security-label">Encryption</td>
+                            <td class="security-value">TLS 1.2+ for all data in transit</td>
+                        </tr>
+                        <tr>
+                            <td class="security-label">Authentication</td>
+                            <td class="security-value">Organization-level API keys</td>
+                        </tr>
+                        <tr>
+                            <td class="security-label">Deployment</td>
+                            <td class="security-value">Windows 10/11, MSI installer</td>
+                        </tr>
+                        <tr>
+                            <td class="security-label">Integration</td>
+                            <td class="security-value">PowerScribe One (native fill-in field)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional -->
+    <section class="security-additional">
+        <div class="container">
+            <h2>Ongoing Work &amp; Contact</h2>
+            <div class="additional-grid">
+                <div class="additional-card">
+                    <h3>SOC 2 Type 1 &mdash; In Progress</h3>
+                    <p>ImpressionAssist is actively pursuing SOC 2 Type 1 compliance. The audit is underway, and we will publish the attestation report once it is issued. Customers under NDA can request status updates and interim control documentation.</p>
+                </div>
+                <div class="additional-card">
+                    <h3>Security Questions</h3>
+                    <p>For security questionnaires, BAA requests, penetration test summaries, or any other due-diligence material, contact <a href="mailto:steve@impressionassist.com">steve@impressionassist.com</a>. We aim to respond to security inquiries within one business day.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="/terms">Terms of Service</a>
+                <a href="/privacy">Privacy Policy</a>
+                <a href="/security">Security</a>
+                <a href="/#contact">Contact</a>
+            </div>
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="assets/images/logo.png" alt="ImpressionAssist Logo" class="footer-logo">
+                </div>
+                <p class="footer-copyright">&copy; 2026 ImpressionAssist LLC. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
