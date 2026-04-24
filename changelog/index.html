@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ImpressionAssist release notes and version history.">
+    <meta name="author" content="ImpressionAssist LLC">
+    <meta property="og:title" content="Changelog - ImpressionAssist">
+    <meta property="og:description" content="Release notes and version history for ImpressionAssist.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://impressionassist.com/changelog">
+    <meta property="og:image" content="https://impressionassist.com/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <title>Changelog - ImpressionAssist</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .changelog-intro {
+            padding: 80px 0 32px;
+            background-color: var(--white);
+        }
+        .changelog-intro .container { max-width: 780px; }
+        .changelog-intro h1 {
+            font-size: 2.5rem;
+            color: var(--text-dark);
+            margin-bottom: 16px;
+            text-align: center;
+        }
+        .changelog-intro .intro-lede {
+            font-size: 1.0625rem;
+            line-height: 1.7;
+            color: var(--text-gray);
+            text-align: center;
+            margin-bottom: 0;
+        }
+        .changelog-list {
+            padding: 24px 0 100px;
+            background-color: var(--white);
+        }
+        .changelog-list .container { max-width: 780px; }
+        .changelog-entry {
+            background: var(--bg-light);
+            border-radius: 16px;
+            padding: 32px 36px;
+            margin-bottom: 24px;
+            border-left: 4px solid var(--primary-color);
+        }
+        .changelog-entry:last-child { margin-bottom: 0; }
+        .changelog-entry-header {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 16px;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+        }
+        .changelog-version {
+            font-size: 1.375rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin: 0;
+        }
+        .changelog-date {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            white-space: nowrap;
+        }
+        .changelog-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--primary-dark);
+            margin: 0 0 8px;
+        }
+        .changelog-description {
+            font-size: 0.9375rem;
+            line-height: 1.7;
+            color: var(--text-gray);
+            margin: 0;
+        }
+        @media (max-width: 768px) {
+            .changelog-intro h1 { font-size: 1.875rem; }
+            .changelog-entry { padding: 24px 20px; }
+            .changelog-entry-header { flex-direction: column; gap: 4px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="/" class="logo">
+                <img src="/assets/images/logo.png" alt="ImpressionAssist Logo" class="logo-img">
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="/">Home</a></li>
+                <li><a href="/#features">Features</a></li>
+                <li><a href="/#research">Research</a></li>
+                <li><a href="/#roi">ROI</a></li>
+                <li><a href="/security">Security</a></li>
+                <li><a href="/#contact" class="btn btn-nav">Get Started</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Intro -->
+    <section class="changelog-intro">
+        <div class="container">
+            <h1>Changelog</h1>
+            <p class="intro-lede">Release notes and version history for ImpressionAssist. Newest entries appear first.</p>
+        </div>
+    </section>
+
+    <!-- Entries (reverse chronological) -->
+    <section class="changelog-list">
+        <div class="container">
+            <article class="changelog-entry">
+                <div class="changelog-entry-header">
+                    <h2 class="changelog-version">Version 1.0</h2>
+                    <span class="changelog-date">Q3 2026</span>
+                </div>
+                <h3 class="changelog-title">Initial Release</h3>
+                <p class="changelog-description">First general-availability release of ImpressionAssist, bringing patient-friendly radiology impression translation and action item extraction to PowerScribe One. Details will be published here when the release ships.</p>
+            </article>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="/terms">Terms of Service</a>
+                <a href="/privacy">Privacy Policy</a>
+                <a href="/security">Security</a>
+                <a href="/changelog">Changelog</a>
+                <a href="/#contact">Contact</a>
+            </div>
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="/assets/images/logo.png" alt="ImpressionAssist Logo" class="footer-logo">
+                </div>
+                <p class="footer-copyright">&copy; 2026 ImpressionAssist LLC. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/main.js"></script>
+</body>
+</html>
