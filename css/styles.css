@@ -295,11 +295,18 @@ a:hover {
 .hero-f9-badge {
     display: inline-block;
     margin-bottom: 14px;
-    padding: 6px 16px;
-    border-radius: 9999px;
-    background: var(--primary-color);
-    color: var(--white);
+    padding: 4px 12px;
+    border-radius: 6px;
+    background: #f3f4f6;
+    color: var(--text-dark);
+    border: 1px solid #d1d5db;
+    border-bottom: 2px solid #9ca3af;
+    box-shadow: 0 2px 0 #9ca3af;
+    font-family: 'Courier New', Courier, monospace;
     font-size: 0.875rem;
+}
+
+.hero-f9-badge strong {
     font-weight: 700;
 }
 
