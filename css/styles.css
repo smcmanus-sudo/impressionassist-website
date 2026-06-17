@@ -292,6 +292,24 @@ a:hover {
     align-items: center;
 }
 
+.hero-screenshot {
+    display: block;
+    width: 100%;
+    max-width: 560px;
+    height: auto;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+}
+
+.hero-screenshot-caption {
+    margin-top: 12px;
+    font-size: 0.875rem;
+    font-style: italic;
+    color: var(--text-light);
+    text-align: center;
+}
+
 .comparison-card {
     background: var(--white);
     border-radius: 16px;

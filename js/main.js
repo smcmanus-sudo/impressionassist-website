@@ -46,24 +46,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Comparison tabs functionality
-    const tabBtns = document.querySelectorAll('.tab-btn');
-    const tabContents = document.querySelectorAll('.tab-content');
-
-    tabBtns.forEach(function(btn) {
-        btn.addEventListener('click', function() {
-            const targetTab = this.getAttribute('data-tab');
-
-            // Remove active class from all buttons and content
-            tabBtns.forEach(function(b) { b.classList.remove('active'); });
-            tabContents.forEach(function(c) { c.classList.remove('active'); });
-
-            // Add active class to clicked button and corresponding content
-            this.classList.add('active');
-            document.getElementById(targetTab).classList.add('active');
-        });
-    });
-
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
         anchor.addEventListener('click', function(e) {
