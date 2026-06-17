@@ -292,10 +292,21 @@ a:hover {
     align-items: center;
 }
 
+.hero-f9-badge {
+    display: inline-block;
+    margin-bottom: 14px;
+    padding: 6px 16px;
+    border-radius: 9999px;
+    background: var(--primary-color);
+    color: var(--white);
+    font-size: 0.875rem;
+    font-weight: 700;
+}
+
 .hero-screenshot {
     display: block;
     width: 100%;
-    max-width: 560px;
+    max-width: 480px;
     height: auto;
     border-radius: 10px;
     border: 1px solid rgba(0, 0, 0, 0.08);
