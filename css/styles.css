@@ -307,6 +307,18 @@ a:hover {
     font-weight: 700;
 }
 
+.hero-badges {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.hero-badges .hero-f9-badge {
+    margin-bottom: 0;
+}
+
 .hero-screenshot {
     display: block;
     width: 100%;
