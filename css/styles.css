@@ -2265,6 +2265,15 @@ textarea:focus {
     margin-bottom: 24px;
 }
 
+.trust-title-question {
+    display: block;
+    margin-top: 6px;
+}
+
+.trust-title-question em {
+    font-style: italic;
+}
+
 .trust-lede {
     max-width: 760px;
     margin: 0 auto 56px;
