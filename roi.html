@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A theoretical revenue recovery model for radiology practices: how incomplete follow-up imaging translates into lost revenue, and what recovery scenarios look like for a 30-radiologist practice.">
+    <meta name="keywords" content="radiology ROI, follow-up adherence, revenue recapture, imaging revenue, radiology practice economics">
+    <meta name="author" content="ImpressionAssist LLC">
+    <meta property="og:title" content="ROI Model - ImpressionAssist">
+    <meta property="og:description" content="How incomplete follow-up imaging translates into lost revenue, and what recovery scenarios look like.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://impressionassist.com/roi">
+    <meta property="og:image" content="https://impressionassist.com/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <title>ROI Model - ImpressionAssist</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+    /* ROI Calculator — inlined to avoid CDN caching issues */
+    .roi-calculator{margin-top:64px;padding:48px;background:var(--white);border-radius:20px;box-shadow:var(--shadow-lg);border-top:4px solid var(--primary-color)}
+    .roi-calc-heading{font-size:1.75rem;text-align:center;margin-bottom:8px;color:var(--text-dark)}
+    .roi-calc-subheading{text-align:center;color:var(--text-light);font-size:1.0625rem;margin-bottom:40px}
+    .roi-waterfall{display:flex;align-items:flex-end;justify-content:center;gap:0;margin-bottom:16px;padding:0 8px}
+    .waterfall-step{flex:1;text-align:center;min-width:0}
+    .waterfall-bar-wrap{height:200px;display:flex;align-items:flex-end;justify-content:center;padding:0 8px}
+    .waterfall-bar{width:100%;max-width:100px;height:var(--bar-pct);min-height:40px;border-radius:8px 8px 0 0;display:flex;align-items:flex-start;justify-content:center;padding-top:10px;transition:height .8s cubic-bezier(.4,0,.2,1);position:relative}
+    .waterfall-bar-full{background:linear-gradient(180deg,var(--primary-color),var(--primary-dark));height:100%}
+    .waterfall-bar-mid{background:linear-gradient(180deg,#FF9800,#F57C00);height:55%}
+    .waterfall-bar-lost{background:linear-gradient(180deg,#f44336,#d32f2f);height:30%}
+    .waterfall-bar-revenue{background:linear-gradient(180deg,#f44336,#b71c1c);height:45%}
+    .waterfall-value{font-size:.9375rem;font-weight:700;color:var(--white);text-shadow:0 1px 3px rgba(0,0,0,.3);white-space:nowrap}
+    .waterfall-label{font-size:.8125rem;font-weight:600;color:var(--text-dark);margin-top:12px;line-height:1.3}
+    .waterfall-detail{font-size:.75rem;color:var(--text-light);margin-top:4px}
+    .waterfall-arrow{display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding-bottom:90px;flex-shrink:0;width:48px}
+    .waterfall-arrow svg{width:24px;height:24px;color:var(--text-light)}
+    .waterfall-arrow-label{font-size:.75rem;font-weight:600;color:var(--primary-dark);margin-top:4px;white-space:nowrap}
+    .waterfall-math{display:flex;align-items:center;justify-content:center;gap:12px;background:var(--bg-light);padding:12px 24px;border-radius:8px;font-size:.875rem;color:var(--text-gray);margin-bottom:48px;flex-wrap:wrap}
+    .math-sep{color:var(--text-light);font-weight:600}
+    .roi-scenario-heading{text-align:center;font-size:1.375rem;margin-bottom:24px;color:var(--text-dark)}
+    .roi-scenarios{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:40px}
+    .scenario-card{background:var(--bg-light);border-radius:16px;padding:28px 24px;text-align:center;transition:var(--transition);border:2px solid transparent}
+    .scenario-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
+    .scenario-card-featured{border-color:var(--primary-color);background:rgba(0,188,212,.06);position:relative}
+    .scenario-header{display:inline-block;padding:4px 16px;border-radius:20px;font-size:.8125rem;font-weight:600;color:var(--white);margin-bottom:16px;letter-spacing:.02em}
+    .scenario-conservative{background:#78909C}
+    .scenario-published{background:var(--primary-color)}
+    .scenario-full{background:#43A047}
+    .scenario-pct{font-size:2.5rem;font-weight:700;color:var(--text-dark);line-height:1;margin-bottom:4px}
+    .scenario-label{font-size:.8125rem;color:var(--text-light);margin-bottom:20px}
+    .scenario-bar-wrap{width:100%;height:8px;background:var(--border-color);border-radius:4px;margin-bottom:20px;overflow:hidden}
+    .scenario-bar{height:100%;border-radius:4px;width:var(--bar-pct);transition:width 1s cubic-bezier(.4,0,.2,1)}
+    .scenario-bar-conservative{background:#78909C}
+    .scenario-bar-published{background:var(--primary-color)}
+    .scenario-bar-full{background:#43A047}
+    .scenario-stats{display:flex;flex-direction:column;gap:12px}
+    .scenario-stat{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border-color)}
+    .scenario-stat:last-child{border-bottom:none}
+    .scenario-stat-value{font-size:1.0625rem;font-weight:700;color:var(--text-dark)}
+    .scenario-stat-label{font-size:.8125rem;color:var(--text-light)}
+    .roi-multiple{background:var(--bg-light);border-radius:16px;padding:32px;margin-bottom:24px}
+    .roi-multiple h4{text-align:center;font-size:1.25rem;margin-bottom:24px;color:var(--text-dark)}
+    .roi-multiple-row{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap}
+    .roi-multiple-item{flex:1;min-width:140px;max-width:200px;text-align:center;padding:20px 16px;border-radius:12px;background:var(--white);box-shadow:var(--shadow-sm)}
+    .roi-cost{border:2px solid var(--border-color)}
+    .roi-multiple-label{display:block;font-size:.75rem;font-weight:600;color:var(--text-light);text-transform:uppercase;letter-spacing:.04em;margin-bottom:8px}
+    .roi-multiple-value{display:block;font-size:1.375rem;font-weight:700;color:var(--text-dark);margin-bottom:8px}
+    .roi-multiple-detail{display:block;font-size:.75rem;color:var(--text-light)}
+    .roi-multiple-vs{font-size:1rem;font-weight:700;color:var(--text-light);flex-shrink:0}
+    .roi-multiple-badge{display:inline-block;padding:4px 12px;border-radius:20px;font-size:.8125rem;font-weight:700}
+    .roi-badge-positive{background:#E8F5E9;color:#2E7D32}
+    .roi-calc-note{text-align:center;font-size:.8125rem;color:var(--text-light);margin-bottom:0;line-height:1.6}
+    @media(max-width:1024px){
+        .roi-calculator{padding:32px 24px}
+        .roi-scenarios{grid-template-columns:1fr;max-width:400px;margin:0 auto 40px}
+        .roi-waterfall{flex-direction:column;align-items:center;gap:0}
+        .waterfall-step{width:100%;max-width:280px}
+        .waterfall-bar-wrap{height:60px;flex-direction:row;align-items:center}
+        .waterfall-bar{height:48px!important;width:var(--bar-pct);min-width:60px;min-height:unset;border-radius:8px;align-items:center;padding-top:0}
+        .waterfall-arrow{padding-bottom:0;padding:8px 0;width:auto}
+        .waterfall-arrow svg{transform:rotate(90deg)}
+        .roi-multiple-row{flex-direction:column;gap:12px}
+        .roi-multiple-item{max-width:100%;width:100%}
+    }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="/" class="logo">
+                <img src="assets/images/logo.png" alt="ImpressionAssist Logo" class="logo-img">
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="/">Home</a></li>
+                <li><a href="/#features">Features</a></li>
+                <li><a href="/research">Research</a></li>
+                <li><a href="/roi">ROI</a></li>
+                <li><a href="/security">Security</a></li>
+                <li><a href="/#contact" class="btn btn-nav">Get Started</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Intro -->
+    <section class="page-intro">
+        <div class="container">
+            <h1>ROI Model</h1>
+            <p class="intro-lede">Missed follow-ups are a patient safety issue first. They are also a financial one. The model below traces how recommended follow-up imaging that is never completed turns into lost revenue, and what recovery would look like for a 30-radiologist practice.</p>
+        </div>
+    </section>
+
+    <!-- ROI / Revenue Recapture Section -->
+    <section id="roi" class="roi">
+        <div class="container">
+            <h2 class="section-title">The Revenue You're Leaving on the Table</h2>
+            <p class="section-subtitle">Missed follow-ups aren't just a patient safety issue — they're a financial one</p>
+
+            <div class="roi-flow">
+                <div class="roi-step">
+                    <div class="roi-step-number">1</div>
+                    <h3>11–20% of CT and MR studies contain follow-up recommendations</h3>
+                    <p>That's thousands of recommended follow-up exams per year across your practice.</p>
+                </div>
+                <div class="roi-step">
+                    <div class="roi-step-number">2</div>
+                    <h3>~42% of those are never completed</h3>
+                    <p>Patients who don't understand their reports don't come back. That's lost imaging revenue and unmanaged liability risk.</p>
+                </div>
+                <div class="roi-step">
+                    <div class="roi-step-number">3</div>
+                    <h3>Research suggests significant recovery is achievable</h3>
+                    <p>Published studies show that structured, actionable recommendations can improve follow-up compliance by up to 29 percentage points — potentially recovering substantial lost revenue while improving patient outcomes.</p>
+                </div>
+            </div>
+
+            <div class="roi-evidence">
+                <div class="roi-evidence-card">
+                    <h3>What the research shows</h3>
+                    <p><strong>42% of recommended follow-ups are never completed.</strong> In a study of ~3 million radiology exams, Mabotuwana et al. found an overall adherence rate of just 58%.<br>
+                    <span style="font-size:.875rem;color:var(--text-light);">Mabotuwana T, et al. <em>J Am Coll Radiol.</em> 2018;15(3 Pt A):422–428.</span></p>
+                    <p>A 2022 JAMA Network Open study at Beth Israel Deaconess Medical Center demonstrated that structured, actionable recommendations pushed compliance from ~58% to <strong>87.4%</strong> — a <strong>29-percentage-point improvement</strong>.<br>
+                    <span style="font-size:.875rem;color:var(--text-light);">White T, Aronson MD, Sternberg SB, et al. <em>JAMA Netw Open.</em> 2022;5(7):e2222549.</span></p>
+                    <p><span style="font-weight:600;color:var(--text-dark);">Impression</span><span style="font-weight:600;color:#999;">Assist</span> is designed to build on this approach — combining patient-readable language with explicit action items to help patients understand <em>what</em> they need to do and <em>why</em> it matters.</p>
+                </div>
+            </div>
+
+            <!-- ROI Calculator -->
+            <div class="roi-calculator" id="roiCalculator">
+                <h3 class="roi-calc-heading">Revenue Recovery Model: 30-Radiologist Practice</h3>
+                <p class="roi-calc-subheading">See how missed follow-ups translate to lost revenue — and what recovery looks like</p>
+                <p class="roi-calc-note" style="margin-bottom: 40px;"><em>Projections are theoretical, based on published peer-reviewed research. Actual results will vary.</em></p>
+
+                <!-- Waterfall / Funnel Chart -->
+                <div class="roi-waterfall">
+                    <div class="waterfall-step" data-value="100000" data-max="100000">
+                        <div class="waterfall-bar-wrap">
+                            <div class="waterfall-bar waterfall-bar-full" style="--bar-pct: 100%">
+                                <span class="waterfall-value">100,000</span>
+                            </div>
+                        </div>
+                        <div class="waterfall-label">Total CT/MR Studies</div>
+                        <div class="waterfall-detail">44,700 CT + 55,300 MR</div>
+                    </div>
+                    <div class="waterfall-arrow">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+                        <span class="waterfall-arrow-label">&times; 12%</span>
+                    </div>
+                    <div class="waterfall-step" data-value="12000">
+                        <div class="waterfall-bar-wrap">
+                            <div class="waterfall-bar waterfall-bar-mid" style="--bar-pct: 12%">
+                                <span class="waterfall-value">12,000</span>
+                            </div>
+                        </div>
+                        <div class="waterfall-label">Follow-Ups Recommended</div>
+                        <div class="waterfall-detail">12% recommendation rate</div>
+                    </div>
+                    <div class="waterfall-arrow">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+                        <span class="waterfall-arrow-label">&times; 42%</span>
+                    </div>
+                    <div class="waterfall-step" data-value="5040">
+                        <div class="waterfall-bar-wrap">
+                            <div class="waterfall-bar waterfall-bar-lost" style="--bar-pct: 5%">
+                                <span class="waterfall-value">5,040</span>
+                            </div>
+                        </div>
+                        <div class="waterfall-label">Follow-Ups Never Completed</div>
+                        <div class="waterfall-detail">42% non-completion rate</div>
+                    </div>
+                    <div class="waterfall-arrow">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+                        <span class="waterfall-arrow-label">&times; $488</span>
+                    </div>
+                    <div class="waterfall-step" data-value="2459520">
+                        <div class="waterfall-bar-wrap">
+                            <div class="waterfall-bar waterfall-bar-revenue" style="--bar-pct: 25%">
+                                <span class="waterfall-value">$2.46M</span>
+                            </div>
+                        </div>
+                        <div class="waterfall-label">Lost Revenue Pool</div>
+                        <div class="waterfall-detail">Weighted avg $488/exam</div>
+                    </div>
+                </div>
+
+                <div class="waterfall-math">
+                    <span>CT 44.7% @ $350</span>
+                    <span class="math-sep">+</span>
+                    <span>MR 55.3% @ $600</span>
+                    <span class="math-sep">=</span>
+                    <span><strong>$488 weighted avg</strong></span>
+                </div>
+
+                <!-- Recovery Scenarios -->
+                <h4 class="roi-scenario-heading">Recovery Scenarios</h4>
+                <div class="roi-scenarios">
+                    <div class="scenario-card">
+                        <div class="scenario-header scenario-conservative">Conservative</div>
+                        <div class="scenario-pct">+10 pts</div>
+                        <div class="scenario-label">compliance improvement</div>
+                        <div class="scenario-bar-wrap">
+                            <div class="scenario-bar scenario-bar-conservative" style="--bar-pct: 24%"></div>
+                        </div>
+                        <div class="scenario-stats">
+                            <div class="scenario-stat">
+                                <span class="scenario-stat-value">1,200</span>
+                                <span class="scenario-stat-label">exams recovered</span>
+                            </div>
+                            <div class="scenario-stat">
+                                <span class="scenario-stat-value">$585,600</span>
+                                <span class="scenario-stat-label">revenue recovered</span>
+                            </div>
+                            <div class="scenario-stat">
+                                <span class="scenario-stat-value">$19,520</span>
+                                <span class="scenario-stat-label">per radiologist</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="scenario-card scenario-card-featured">
+                        <div class="scenario-header scenario-published">Research-Based</div>
+                        <div class="scenario-pct">+29 pts</div>
+                        <div class="scenario-label">compliance improvement (White et al.)</div>
+                        <div class="scenario-bar-wrap">
+                            <div class="scenario-bar scenario-bar-published" style="--bar-pct: 69%"></div>
+                        </div>
+                        <div class="scenario-stats">
+                            <div class="scenario-stat">
+                                <span class="scenario-stat-value">3,480</span>
+                                <span class="scenario-stat-label">exams recovered</span>
+                            </div>
+                            <div class="scenario-stat">
+                                <span class="scenario-stat-value">$1,698,240</span>
+                                <span class="scenario-stat-label">revenue recovered</span>
+                            </div>
+                            <div class="scenario-stat">
+                                <span class="scenario-stat-value">$56,608</span>
+                                <span class="scenario-stat-label">per radiologist</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="scenario-card">
+                        <div class="scenario-header scenario-full">Full Gap Closure</div>
+                        <div class="scenario-pct">+42 pts</div>
+                        <div class="scenario-label">all lost follow-ups recovered</div>
+                        <div class="scenario-bar-wrap">
+                            <div class="scenario-bar scenario-bar-full" style="--bar-pct: 100%"></div>
+                        </div>
+                        <div class="scenario-stats">
+                            <div class="scenario-stat">
+                                <span class="scenario-stat-value">5,040</span>
+                                <span class="scenario-stat-label">exams recovered</span>
+                            </div>
+                            <div class="scenario-stat">
+                                <span class="scenario-stat-value">$2,459,520</span>
+                                <span class="scenario-stat-label">revenue recovered</span>
+                            </div>
+                            <div class="scenario-stat">
+                                <span class="scenario-stat-value">$81,984</span>
+                                <span class="scenario-stat-label">per radiologist</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="roi-calc-note" style="font-style: italic; margin-bottom: 12px;"><em>Theoretical model based on published peer-reviewed research. Actual results will vary. Real-world outcomes data is currently being gathered.</em></p>
+                <p class="roi-calc-note">Based on a 30-radiologist practice reading 100,000 CT/MR studies annually. Sources: Mabotuwana et al., <em>JACR</em> 2018; White et al., <em>JAMA Netw Open</em> 2022; CMS Medicare Physician Fee Schedule.</p>
+                <p class="roi-calc-note" style="margin-top: 12px;">This model uses CT and MR reimbursement data for illustration, but ImpressionAssist works with all radiology reports — including ultrasound, nuclear medicine, PET, X-ray, and mammography — where follow-up recommendations and patient comprehension matter.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Closing CTA -->
+    <section id="cta" class="cta">
+        <div class="container" style="text-align: center; max-width: 700px;">
+            <h2 class="section-title">AI-generated. Radiologist-reviewed. Patient-ready.</h2>
+            <p style="color: var(--text-light); font-size: 1.125rem; line-height: 1.8; margin-bottom: 32px;">Give patients an explanation they can understand, reviewed by the physician who interpreted their exam.</p>
+            <a href="/#contact" class="btn btn-primary btn-large">Get Started</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="/research">Research</a>
+                <a href="/roi">ROI</a>
+                <a href="/terms">Terms of Service</a>
+                <a href="/privacy">Privacy Policy</a>
+                <a href="/security">Security</a>
+                <a href="/changelog">Changelog</a>
+                <a href="/#contact">Contact</a>
+            </div>
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="assets/images/logo.png" alt="ImpressionAssist Logo" class="footer-logo">
+                </div>
+                <p class="footer-copyright">&copy; 2026 ImpressionAssist LLC. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

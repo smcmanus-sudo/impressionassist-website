@@ -2191,6 +2191,515 @@ textarea:focus {
     outline-offset: 2px;
 }
 
+/* ============================================
+   Trust Positioning Sections (home page)
+   ============================================ */
+
+/* Shared page intro (Research / ROI pages) */
+.page-intro {
+    padding: 120px 0 40px;
+    background-color: var(--white);
+}
+
+.page-intro .container {
+    max-width: 820px;
+}
+
+.page-intro h1 {
+    font-size: 2.5rem;
+    color: var(--text-dark);
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.page-intro .intro-lede {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: var(--text-gray);
+    text-align: center;
+    margin-bottom: 0;
+}
+
+/* Sources list (Research page) */
+.research-sources {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.research-sources h4 {
+    font-size: 1rem;
+    color: var(--text-dark);
+    margin-bottom: 12px;
+}
+
+.research-sources ol {
+    margin: 0 0 16px 20px;
+    padding: 0;
+}
+
+.research-sources li {
+    font-size: 0.8125rem;
+    line-height: 1.7;
+    color: var(--text-light);
+    margin-bottom: 6px;
+}
+
+.research-footnote {
+    font-size: 0.8125rem;
+    line-height: 1.7;
+    color: var(--text-light);
+    margin-bottom: 0;
+}
+
+/* Section 2 — The New Problem */
+.trust {
+    padding: 100px 0;
+    background-color: var(--bg-light);
+}
+
+.trust .section-title {
+    max-width: 880px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 24px;
+}
+
+.trust-lede {
+    max-width: 760px;
+    margin: 0 auto 56px;
+    text-align: center;
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    color: var(--text-gray);
+}
+
+.trust-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    max-width: 1000px;
+    margin: 0 auto;
+    align-items: stretch;
+}
+
+.trust-card {
+    background: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 36px 32px;
+    box-shadow: var(--shadow-sm);
+}
+
+.trust-card-featured {
+    border: 2px solid var(--primary-color);
+    box-shadow: var(--shadow-lg);
+}
+
+.trust-card-eyebrow {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-light);
+    margin-bottom: 8px;
+}
+
+.trust-card-featured .trust-card-eyebrow {
+    color: var(--primary-dark);
+}
+
+.trust-card-title {
+    font-size: 1.375rem;
+    margin-bottom: 28px;
+}
+
+.trust-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.trust-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+}
+
+.trust-marker {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--bg-gray);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1px;
+}
+
+.trust-marker svg {
+    width: 14px;
+    height: 14px;
+    fill: none;
+    stroke: #9aa5a8;
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.trust-card-featured .trust-marker {
+    background: rgba(0, 188, 212, 0.14);
+}
+
+.trust-card-featured .trust-marker svg {
+    stroke: var(--primary-dark);
+}
+
+.trust-item-title {
+    display: block;
+    font-weight: 600;
+    font-size: 0.9375rem;
+    color: var(--text-dark);
+    margin-bottom: 3px;
+}
+
+.trust-item-text {
+    display: block;
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    color: var(--text-light);
+}
+
+.trust-closing {
+    text-align: center;
+    font-size: 1.375rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin: 48px auto 0;
+    max-width: 700px;
+}
+
+/* Section 3 — The Review Itself */
+.review {
+    padding: 100px 0;
+    background-color: var(--white);
+}
+
+.workflow-strip {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 940px;
+    margin: 0 auto 48px;
+    padding: 28px 20px;
+    background: var(--bg-light);
+    border-radius: 16px;
+}
+
+.workflow-step {
+    flex: 1 1 0;
+    min-width: 0;
+    text-align: center;
+    padding: 12px 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    background: var(--white);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.workflow-step-key {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--white);
+}
+
+.workflow-connector {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    color: var(--text-light);
+}
+
+.workflow-connector svg {
+    width: 18px;
+    height: 18px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.review-body {
+    max-width: 760px;
+    margin: 0 auto 48px;
+    text-align: center;
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    color: var(--text-gray);
+}
+
+.review-callout {
+    max-width: 820px;
+    margin: 0 auto;
+    background: rgba(0, 188, 212, 0.07);
+    border-left: 4px solid var(--primary-color);
+    border-radius: 0 12px 12px 0;
+    padding: 32px 36px;
+}
+
+.review-callout-quote {
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.45;
+    color: var(--text-dark);
+    margin-bottom: 12px;
+}
+
+.review-callout-follow {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--text-gray);
+    margin-bottom: 0;
+}
+
+/* Section 4 — Patient Summary + Action Items */
+.answers {
+    padding: 100px 0;
+    background-color: var(--bg-light);
+}
+
+.answers-transition {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    max-width: 720px;
+    margin: 0 auto 56px;
+}
+
+.answers-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    max-width: 1040px;
+    margin: 0 auto;
+    align-items: stretch;
+}
+
+.answer-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--white);
+    border-radius: 16px;
+    border-top: 4px solid var(--primary-color);
+    box-shadow: var(--shadow-sm);
+    padding: 36px 32px;
+}
+
+.answer-eyebrow {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--primary-dark);
+    margin-bottom: 8px;
+}
+
+.answer-question {
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+}
+
+.answer-text {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--text-gray);
+    margin-bottom: 24px;
+}
+
+.answer-stat {
+    margin-top: auto;
+    background: rgba(0, 188, 212, 0.08);
+    border-left: 4px solid var(--primary-color);
+    border-radius: 0 12px 12px 0;
+    padding: 20px 24px;
+}
+
+.answer-stat-line {
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    color: var(--text-gray);
+    margin-bottom: 8px;
+}
+
+.answer-stat-line sup {
+    font-size: 0.75rem;
+    color: var(--text-light);
+    margin-left: 1px;
+}
+
+.answer-stat-note {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--text-gray);
+    margin-bottom: 0;
+}
+
+.answer-citation {
+    font-size: 0.75rem;
+    line-height: 1.5;
+    color: #666;
+    margin: 16px 0 0;
+}
+
+.answer-citation sup {
+    font-size: 0.625rem;
+    margin-right: 2px;
+}
+
+/* Credibility strip */
+.credibility {
+    padding: 80px 0;
+    background-color: var(--white);
+}
+
+.credibility-title {
+    text-align: center;
+    font-size: 1.75rem;
+    margin-bottom: 12px;
+}
+
+.credibility-sub {
+    text-align: center;
+    color: var(--text-light);
+    font-size: 1rem;
+    margin-bottom: 40px;
+}
+
+.credibility-links {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    max-width: 880px;
+    margin: 0 auto;
+}
+
+.credibility-link {
+    display: block;
+    background: var(--bg-light);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 28px 32px;
+    transition: var(--transition);
+}
+
+.credibility-link:hover {
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+.credibility-link h3 {
+    font-size: 1.125rem;
+    margin-bottom: 8px;
+    color: var(--text-dark);
+}
+
+.credibility-link p {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--text-light);
+    margin-bottom: 12px;
+}
+
+.credibility-link-cue {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+@media (max-width: 900px) {
+    .trust-grid,
+    .answers-grid,
+    .credibility-links {
+        grid-template-columns: 1fr;
+        max-width: 560px;
+    }
+
+    .workflow-strip {
+        flex-direction: column;
+        align-items: stretch;
+        max-width: 360px;
+        padding: 20px;
+    }
+
+    .workflow-step {
+        flex: 0 0 auto;
+        width: 100%;
+    }
+
+    .workflow-connector {
+        width: 100%;
+        padding: 6px 0;
+    }
+
+    .workflow-connector svg {
+        transform: rotate(90deg);
+    }
+}
+
+@media (max-width: 768px) {
+    .page-intro {
+        padding: 110px 0 24px;
+    }
+
+    .page-intro h1 {
+        font-size: 1.875rem;
+    }
+
+    .page-intro .intro-lede {
+        font-size: 1rem;
+    }
+
+    .trust,
+    .review,
+    .answers {
+        padding: 64px 0;
+    }
+
+    .trust-card,
+    .answer-card {
+        padding: 28px 24px;
+    }
+
+    .trust-closing,
+    .answers-transition,
+    .review-callout-quote {
+        font-size: 1.25rem;
+    }
+
+    .review-callout {
+        padding: 24px;
+    }
+
+    .credibility {
+        padding: 56px 0;
+    }
+
+    .credibility-link {
+        padding: 24px;
+    }
+}
+
 /* Print styles */
 @media print {
     .navbar,
