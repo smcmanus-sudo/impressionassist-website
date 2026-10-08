@@ -121,15 +121,4 @@ document.addEventListener('DOMContentLoaded', function() {
             document.body.style.overflow = '';
         }
     });
-
-    // Download button - show message if link not ready
-    const downloadBtn = document.querySelector('.download-btn');
-    if (downloadBtn) {
-        downloadBtn.addEventListener('click', function(e) {
-            if (this.getAttribute('href') === '#') {
-                e.preventDefault();
-                alert('ImpressionAssist is currently in beta testing. Please fill out the contact form to request early access.');
-            }
-        });
-    }
 });

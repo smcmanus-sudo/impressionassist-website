@@ -249,6 +249,11 @@ a:hover {
     line-height: 1.7;
 }
 
+/* Hero content ends on the subtitle now that the CTA is gone */
+.hero-content > :last-child {
+    margin-bottom: 0;
+}
+
 .hero-stats {
     background: rgba(0, 188, 212, 0.08);
     border-left: 4px solid var(--primary-color);
@@ -1576,108 +1581,6 @@ a:hover {
     color: var(--text-dark);
 }
 
-/* Contact Section */
-.contact {
-    padding: 100px 0;
-    background-color: var(--bg-light);
-}
-
-.contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    gap: 60px;
-}
-
-.download-section,
-.contact-form-section {
-    background: var(--white);
-    padding: 40px;
-    border-radius: 16px;
-    box-shadow: var(--shadow-sm);
-}
-
-.download-section h3,
-.contact-form-section h3 {
-    margin-bottom: 16px;
-    font-size: 1.5rem;
-}
-
-.download-section p {
-    color: var(--text-light);
-    margin-bottom: 24px;
-}
-
-.download-btn {
-    margin-bottom: 16px;
-}
-
-.download-note {
-    font-size: 0.875rem;
-    color: var(--text-light);
-    margin-bottom: 0;
-}
-
-.contact-form {
-    margin-bottom: 24px;
-}
-
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 500;
-    color: var(--text-dark);
-    font-size: 0.9375rem;
-}
-
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 12px 16px;
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    font-family: var(--font-family);
-    font-size: 1rem;
-    transition: var(--transition);
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px var(--primary-light);
-}
-
-.form-group textarea {
-    resize: vertical;
-    min-height: 120px;
-}
-
-.contact-form .btn {
-    width: 100%;
-}
-
-.contact-info {
-    padding-top: 20px;
-    border-top: 1px solid var(--border-color);
-}
-
-.contact-info p {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 0;
-}
-
-.contact-info svg {
-    width: 20px;
-    height: 20px;
-    stroke: var(--primary-color);
-}
-
 /* Footer */
 .footer {
     background-color: var(--text-dark);
@@ -1816,21 +1719,6 @@ a:hover {
     }
 }
 
-/* Success/Error Messages */
-.form-success {
-    background-color: #ecfdf5;
-    border: 1px solid var(--primary-color);
-    color: var(--primary-dark);
-    padding: 16px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    display: none;
-}
-
-.form-success.show {
-    display: block;
-}
-
 /* Mobile Responsive */
 @media (max-width: 1024px) {
     .hero-container {
@@ -1954,11 +1842,6 @@ a:hover {
     .roi-multiple-item {
         max-width: 100%;
         width: 100%;
-    }
-
-    .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 32px;
     }
 
     .founder-letter {
@@ -2119,11 +2002,6 @@ a:hover {
         flex-direction: column;
         gap: 16px;
         text-align: center;
-    }
-
-    .download-section,
-    .contact-form-section {
-        padding: 24px;
     }
 
     .screenshot-placeholder {
@@ -2712,7 +2590,6 @@ textarea:focus {
 /* Print styles */
 @media print {
     .navbar,
-    .contact-form,
     .btn {
         display: none !important;
     }
